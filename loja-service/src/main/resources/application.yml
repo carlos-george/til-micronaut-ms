@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: loja-service
+  server:
+    port: ${random.port}
+
+kafka:
+  bootstrap:
+    servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:29092}
+
+consul:
+  client:
+    registration:
+      check:
+        enabled: true
+    default-zone: ${CONSUL_HOST:localhost}:8500

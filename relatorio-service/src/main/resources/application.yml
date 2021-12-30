@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: relatorio-service
+  server:
+    port: ${random.port}
+
+kafka:
+  bootstrap:
+    servers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:29092}
+
+mongodb:
+  uri: mongodb://root:root@${MONGO_HOST:localhost}:27017/VehicleSales?authSource=admin
+
+consul:
+  client:
+    registration:
+      check:
+        enabled: true
+    default-zone: ${CONSUL_HOST:localhost}:8500
